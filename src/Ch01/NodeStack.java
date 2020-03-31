@@ -54,7 +54,7 @@ public class NodeStack<Item> implements Iterable<Item>{
 	
 	private class ListIterator implements Iterator<Item>{
 
-		private Node current;
+		private Node current = first;
 		
 		/* (non-Javadoc)
 		 * @see java.util.Iterator#hasNext()
