@@ -1,3 +1,4 @@
+package Ch01;
 /******************************************************************************
  *  Compilation:  javac Rational.java
  *  Execution:    java Rational
