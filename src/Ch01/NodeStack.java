@@ -18,7 +18,7 @@ public class NodeStack<Item> implements Iterable<Item>{
 		Item item;
 		Node next;
 	}
-	private Queue test;
+
 	
 	public boolean isEmpty() { return N == 0; }
 	
@@ -29,7 +29,7 @@ public class NodeStack<Item> implements Iterable<Item>{
 		Node oldFirst = first;
 		first = new Node();
 		first.item = item;
-		first.next = oldFirst.next;
+		first.next = oldFirst;
 		//±ğÍüÁËN++
 		N++;
 	}
