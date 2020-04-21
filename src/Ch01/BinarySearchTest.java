@@ -24,13 +24,13 @@ public class BinarySearchTest {
 	
 	@SuppressWarnings("deprecation")
 	public static void main(String args[]) {
-		int[] whiteList = In.readInts(args[0]);
-		Arrays.sort(whiteList);
-		while(!StdIn.isEmpty()) {
-			int key = StdIn.readInt();
-			if(rank(key, whiteList) < 0) {
-				StdOut.println(key);
-			}
-		}
+//		int[] whiteList = In.readInts(args[0]);
+//		Arrays.sort(whiteList);
+//		while(!StdIn.isEmpty()) {
+//			int key = StdIn.readInt();
+//			if(rank(key, whiteList) < 0) {
+//				StdOut.println(key);
+//			}
+//		}
 	}
 }
