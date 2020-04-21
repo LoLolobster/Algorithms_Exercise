@@ -42,7 +42,12 @@ public class NodeStack<Item> implements Iterable<Item>{
 		N--;
 		return item;
 	}
-
+	
+	public Item peek() {
+		//从栈顶获取元素而不删除
+		return first.item;
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Iterable#iterator()
 	 */
