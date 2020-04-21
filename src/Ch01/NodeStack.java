@@ -67,7 +67,7 @@ public class NodeStack<Item> implements Iterable<Item>{
 		@Override
 		public boolean hasNext() {
 			// TODO Auto-generated method stub
-			return current.next != null;
+			return current != null;
 		}
 
 		/* (non-Javadoc)
