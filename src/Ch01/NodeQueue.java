@@ -6,9 +6,9 @@ package Ch01;
 import java.util.Iterator;
 
 /**
+ * 通过链表实现队列
  * @author HP
  * create time: 2020年3月31日下午5:15:36
- * 通过链表实现队列
  */
 public class NodeQueue<Item> implements Iterable<Item>{
 	private Node first;
@@ -30,10 +30,12 @@ public class NodeQueue<Item> implements Iterable<Item>{
 		last.item = item;
 		last.next = null;
 		//下一步是把oldlast链接last，但是这么做是需要考虑的
-		if (isEmpty())	first = last; //如果此时队列中没有元素，
-										  //链接之后oldlast就成了头结点，并且它的item是null，显然不合理
-		else 			oldlast.next = last;	
-		oldlast.next = last;
+		if (isEmpty()) {  //如果此时队列中没有元素
+			first = last;   //链接之后oldlast就成了头结点，并且它的item是null，显然不合理
+		}									
+		else {
+			oldlast.next = last;	
+		}
 		N++;
 	}
 
@@ -70,7 +72,6 @@ public class NodeQueue<Item> implements Iterable<Item>{
 			// TODO Auto-generated method stub
 			return current != null;
 		}
-
 		/* (non-Javadoc)
 		 * @see java.util.Iterator#next()
 		 */
