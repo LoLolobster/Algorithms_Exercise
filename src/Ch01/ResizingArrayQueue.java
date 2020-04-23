@@ -95,6 +95,7 @@ public class ResizingArrayQueue<Item> implements Iterable<Item>{
 	 * create time: 2020年4月23日下午9:08:00
 	 * @param <Item>
 	 */
+	@SuppressWarnings("hiding")
 	class MyIterator<Item> implements Iterator<Item> {
 		/**
 		 * 指示这是当前遍历的第几个元素
@@ -122,5 +123,21 @@ public class ResizingArrayQueue<Item> implements Iterable<Item>{
 			return item;
 		}
 		
+	}
+
+	public static void main(String[] args) {
+		//1.3.37 Josephus问题
+		ResizingArrayQueue<Integer> q = new ResizingArrayQueue<Integer>();
+		int N = 7;
+		int M = 2;
+		for(int i = 0; i < N; i++) {
+			q.enqueue(i);
+		}
+		while(!q.isEmpty()) {
+			for(int j = 0; j < M-1; j++) {
+				q.enqueue(q.dequeue());
+			}
+			System.out.println(q.dequeue());
+		}
 	}
 }
