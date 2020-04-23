@@ -19,6 +19,13 @@ public class NodeStack<Item> implements Iterable<Item>{
 		Node next;
 	}
 
+	public NodeStack() {}
+	
+	public NodeStack(NodeStack<Item> s) {
+		while(!s.isEmpty()) {
+			this.push(s.pop());
+		}
+	}
 	
 	public boolean isEmpty() { return N == 0; }
 	
@@ -83,5 +90,17 @@ public class NodeStack<Item> implements Iterable<Item>{
 		
 	}
 	
-	
+	public static void main(String[] args) {
+		NodeStack<Integer> s = new NodeStack<Integer>();
+		for(int i = 0; i < 3; i++) {
+			s.push(i);
+		}
+		NodeStack<Integer> t = new NodeStack<Integer>(s);
+		for(int i : t) {System.out.print(i+" ");}
+		NodeStack<Integer> r = s;
+		System.out.println(s == t);
+		System.out.println(s.equals(t));
+		System.out.println(s == r);
+		System.out.println(s.equals(r));
+	}
 }
